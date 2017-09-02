@@ -9,6 +9,7 @@ module.exports = buildFlow.create()
     .target('target', '?.css')
     .defineOption('plugins')
     .defineOption('parser')
+    .defineOption('syntax')
     .defineOption('comments', false)
     .defineOption('sourcemap', false)
     .defineOption('oneOfSourceSuffixes')
@@ -40,6 +41,7 @@ module.exports = buildFlow.create()
                 from: filename,
                 to: filename,
                 map: _this._sourcemap,
+                syntax: _this._syntax,
                 parser: _this._parser
             })
             .then(function (result) {
