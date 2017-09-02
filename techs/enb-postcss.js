@@ -10,6 +10,7 @@ module.exports = buildFlow.create()
     .defineOption('plugins')
     .defineOption('parser')
     .defineOption('syntax')
+    .defineOption('processors')
     .defineOption('comments', false)
     .defineOption('sourcemap', false)
     .defineOption('oneOfSourceSuffixes')
@@ -42,6 +43,7 @@ module.exports = buildFlow.create()
                 to: filename,
                 map: _this._sourcemap,
                 syntax: _this._syntax,
+                processors: _this._processors,
                 parser: _this._parser
             })
             .then(function (result) {
